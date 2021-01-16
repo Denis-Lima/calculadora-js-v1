@@ -1,0 +1,47 @@
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+    <link href="./css/style.css" rel="stylesheet">
+    <title>Calculadora</title>
+</head>
+<body>
+    <div class="app">
+        <div class="container">
+            <div class="corpo card">
+                <div class="display bg-danger">
+                    <p id="operacao"></p>
+                    <p id="resultado">0</p>
+                </div>
+                <div class="teclas">
+                    <button class="tecla bg-dark" id="clear">C</button>
+                    <button class="tecla bg-dark especial" id="potencia">x²</button>
+                    <button class="tecla bg-dark operator" id="porcentagem">%</button>
+                    <button class="tecla bg-dark operator" id="dividir">÷</button>
+                    <button class="tecla bg-dark number" id="1">1</button>
+                    <button class="tecla bg-dark number" id="2">2</button>
+                    <button class="tecla bg-dark number" id="3">3</button>
+                    <button class="tecla bg-dark operator" id="multiplicar">X</button>
+                    <button class="tecla bg-dark number" id="4">4</button>
+                    <button class="tecla bg-dark number" id="5">5</button>
+                    <button class="tecla bg-dark number" id="6">6</button>
+                    <button class="tecla bg-dark operator" id="subtrair">-</button>
+                    <button class="tecla bg-dark number" id="7">7</button>
+                    <button class="tecla bg-dark number" id="8">8</button>
+                    <button class="tecla bg-dark number" id="9">9</button>
+                    <button class="tecla bg-dark operator" id="somar">+</button>
+                    <button class="tecla bg-dark especial" id="inverter">+/-</button>
+                    <button class="tecla bg-dark number" id="0">0</button>
+                    <button class="tecla bg-dark especial" id="ponto">.</button>
+                    <button class="tecla bg-dark" id="igual">=</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="./js/calculate.js" type="text/javascript"></script>
+    <script src="./js/controller.js" type="text/javascript"></script>
+    <script src="./js/display.js" type="text/javascript"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
+</body>
+</html>
