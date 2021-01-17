@@ -85,6 +85,7 @@ function realizarCalculo() {
         valor1 = valor2
         operador = ''
         valor2 = 0
+        numero_atual = ''
         console.log(string_display)
         atualizarDisplay (string_display.toString(), display)
     }
