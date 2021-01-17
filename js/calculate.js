@@ -78,16 +78,16 @@ function acionarBotao() {
 }
 
 function realizarCalculo() {
-    console.log(valor1, operador)
     if (valor1 && operador) {
         valor2 = display.textContent
         string_display = calcular(valor1, operador, valor2)
-        valor1 = valor2
+        valor1 = string_display
         operador = ''
         valor2 = 0
         numero_atual = ''
-        console.log(string_display)
+        string_calculos = ''
         atualizarDisplay (string_display.toString(), display)
+        atualizarDisplay (valor1.toString(), operacao)
     }
 }
 
