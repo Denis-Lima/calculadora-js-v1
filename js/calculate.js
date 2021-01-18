@@ -1,111 +1,41 @@
-const result = document.querySelector('#igual')
+import { atualizarDisplay, display, operacao } from './display.js'
 
-function tratarId(id, numero) {
-    if (!isNaN(Number(id)) && !(Number(id) === 0)) {
-        numero += id
-        return numero
+let operacoes = []
+let valor_atual = ''
+let negativo = false
+
+function inverter(num) {
+    if (Number(num) === 0) {
+        return num
     }
+    negativo = !negativo
 
-    if (Number(id) === 0) {
-        if (numero.length !== 0) {
-            numero += id
-        }
-        if (operador) {
-            operador = ''
-        }
-        return numero
+    if (negativo) {
+        num = '-' + num
+    } else {
+        num = num.replace('-','')
     }
     
-    if (id === 'ponto') {
-        if (numero.length === 0 && valor1 === 0) {
-            numero = '0.'
-        } else {
-            numero += '.'
-        }
-        return numero
-    }
-
-    if (id === 'potencia') {
-        
-    }
-
-    if (id === 'ponto') {
-        return '.'
-    }
-
-    if (!valor1) {
-        valor1 = Number(numero)
-        numero = ''
-    }
-
-    if (id === 'dividir') {
-        operador = '÷'
-    }
-
-    if (id === 'multiplicar') {
-        operador = 'x'
-    }
-
-    if (id === 'subtrair') {
-        operador = '-'
-    }
-
-    if (id === 'somar') {
-        operador = '+'
-    }
-    string_calculos += valor1 + operador
-    atualizarDisplay (string_calculos.toString(), operacao)
-    return ''
+    return num
 }
 
-function calcular(v1, op, v2) {
-    if (op === 'x') { return Number(v1) * Number(v2)}
-    if (op === '+') { return Number(v1) + Number(v2)}
-    if (op === '-') { return Number(v1) - Number(v2)}
-    if (op === '÷') { return Number(v1) / Number(v2)}
-}
-
-function acionarBotao() {
-    if (this.id === 'clear') {
-        clear()
+function digitar() {
+    if (this.id === 'inverter') {
+        valor_atual = display.textContent
+        valor_atual = inverter(valor_atual.toString())
     } else {
-        numero_atual = tratarId(this.id, numero_atual.toString())
-        string_display = numero_atual
-        if (numero_atual) {
-            atualizarDisplay (Number(string_display).toString(), display)
-        }
+        valor_atual += this.id
     }
-}
-
-function realizarCalculo() {
-    if (valor1 && operador) {
-        valor2 = display.textContent
-        string_display = calcular(valor1, operador, valor2)
-        valor1 = string_display
-        operador = ''
-        valor2 = 0
-        numero_atual = ''
-        string_calculos = ''
-        atualizarDisplay (string_display.toString(), display)
-        atualizarDisplay (valor1.toString(), operacao)
-    }
+    atualizarDisplay(Number(valor_atual).toString(), display)
 }
 
 function clear() {
-    res = 0
-    valor1 = 0
-    operador = ''
-    valor2 = 0
-    numero_atual = ''
-    index = 0
-    string_calculos = ''
-    string_display = '0'
+    valor_atual = ''
+    operacoes = []
+    negativo = false
+
     atualizarDisplay('0', display)
     atualizarDisplay(' ', operacao)
-}
-
-function inverter(params) {
-    
 }
 
 function verificarUltimo (classe) {
@@ -113,4 +43,15 @@ function verificarUltimo (classe) {
         return 0
     }
     return 1
+}
+
+function realizarCalculo(params) {
+    
+}
+
+export {
+    digitar,
+    clear,
+    inverter,
+    realizarCalculo
 }
