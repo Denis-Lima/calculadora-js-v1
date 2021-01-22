@@ -1,4 +1,4 @@
-import { clear, inverter, digitar, realizarCalculo } from "./calculate.js";
+import { clear, adicionarOperacao, digitar, realizarCalculo } from "./calculate.js";
 
 const botoes = document.querySelectorAll('button');
 
@@ -13,6 +13,10 @@ function addEvent() {
         
         if (botao.id === 'igual') {
             botao.addEventListener('click', realizarCalculo)
+        }
+
+        if (botao.getAttribute('class').includes('operator')) {
+            botao.addEventListener('click', adicionarOperacao)
         }
     }
 }
