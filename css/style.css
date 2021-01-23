@@ -8,6 +8,7 @@
     -moz-box-shadow: 30px 27px 22px -10px rgba(0,0,0,0.75);
     box-shadow: 30px 27px 22px -10px rgba(0,0,0,0.75);
     background-color: rgb(7, 7, 7);
+    margin-bottom: 2rem;
 }
 
 .container {
@@ -83,6 +84,34 @@ p {
 .mini {
     position: absolute;
     font-size: 0.9rem;
+}
+
+.miniFooter {
+    position: absolute;
+    z-index: 1;
+    bottom: 8px;
+    right: 16px;
+    background-color: cornflowerblue;
+    border-radius: 10px;
+    box-shadow: 0.3rem 0.3rem 0.7rem black;
+    max-height: 5rem;
+}
+
+.miniFooter p {
+    color: white;
+    font-size: 1rem;
+    margin: 0.5rem 0.5rem 0.5rem 0.5rem;
+}
+
+.miniFooter img {
+    max-width: 2rem;
+}
+
+.links {
+    margin: 0.5rem 1rem;
+    max-height: 2rem;
+    justify-content: space-around;
+    display: flex;
 }
 
 button:focus {outline:0;}
