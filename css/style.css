@@ -80,4 +80,9 @@ p {
     background-color: rgb(59, 59, 59)!important;
 }
 
+.mini {
+    position: absolute;
+    font-size: 0.9rem;
+}
+
 button:focus {outline:0;}
