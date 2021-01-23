@@ -66,7 +66,27 @@ function apagar() {
     } else {
         atualizarDisplay('0', display)
     }
-    return 1
+    return
+}
+function pegarResultado() {
+    operacoes = operacao.textContent + ' ' + display.textContent
+    let lista = operacoes.trim().replaceAll(' ',',').split(',')
+    operacoes += ' ='
+    atualizarDisplay(operacoes, operacao)
+    let resultado = realizarCalculo(lista)
+    atualizarDisplay(resultado, display)
+    valor_atual = ''
+    negativo = false
+    operacoes = ''
+    limpar_op = true
+}
+
+function calcular(v1, op, v2) {
+    if (op === '+') { return Number(v1) + Number(v2)}
+    if (op === '-') { return Number(v1) - Number(v2)}
+    if (op === '*') { return Number(v1) * Number(v2)}
+    if (op === '/') { return Number(v1) / Number(v2)}
+    if (op === '^') { return Number(v1) ** Number(v2)}
 }
 
 function realizarCalculo(params) {
