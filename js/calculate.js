@@ -1,8 +1,9 @@
 import { atualizarDisplay, display, operacao } from './display.js'
 
-let operacoes = []
 let valor_atual = ''
 let negativo = false
+let operacoes = ''
+let limpar_op = false
 
 function inverter(num) {
     if (Number(num) === 0) {
