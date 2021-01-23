@@ -49,9 +49,22 @@ function clear() {
     atualizarDisplay('0', display)
     atualizarDisplay(' ', operacao)
 }
-function verificarUltimo (classe) {
-    if (classe === 'operator') {
-        return 0
+
+function adicionarOperacao() {
+    limpar_op = false
+    operacoes += ' ' + display.textContent.toString() + ' ' + this.id
+    atualizarDisplay(operacoes, operacao)
+    valor_atual = ''
+}
+
+function apagar() {
+    console.log(valor_atual)
+    if (valor_atual) {
+        valor_atual = valor_atual.substring(0, valor_atual.length - 1)
+        console.log(valor_atual)
+        atualizarDisplay(valor_atual, display)
+    } else {
+        atualizarDisplay('0', display)
     }
     return 1
 }
