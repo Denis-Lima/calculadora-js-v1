@@ -124,5 +124,8 @@ export {
     digitar,
     clear,
     inverter,
-    realizarCalculo
+    realizarCalculo,
+    adicionarOperacao,
+    pegarResultado,
+    apagar
 }
