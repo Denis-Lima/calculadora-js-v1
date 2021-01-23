@@ -89,8 +89,35 @@ function calcular(v1, op, v2) {
     if (op === '^') { return Number(v1) ** Number(v2)}
 }
 
-function realizarCalculo(params) {
+function realizarCalculo(lista) {
+    console.log(lista)
+    if (lista.length <= 1) {
+        return lista
+    }
+    let index
     
+    let aux = lista
+    if (aux.toString().replaceAll(',','').search(/[\^]/) !== -1) {
+        index = aux.indexOf('^')
+        let res = calcular(aux[index-1], aux[index], aux[index+1])
+        aux.splice(index-1, 3, res)
+        return realizarCalculo(aux)
+    }
+    if (aux.toString().replaceAll(',','').search(/[\*\/]/) !== -1) {
+        index = aux.indexOf('*') === -1 ? aux.indexOf('/') : aux.indexOf('*')
+        let res = calcular(aux[index-1], aux[index], aux[index+1])
+        aux.splice(index-1, 3, res)
+        return realizarCalculo(aux)
+    } else {
+        if (aux.toString().replaceAll(',','').search(/[\+\-]/) !== -1) {
+            index = aux.indexOf('+') === -1 ? aux.indexOf('-') : aux.indexOf('+')
+            console.log(index)
+            let res = calcular(aux[index-1], aux[index], aux[index+1])
+            aux.splice(index-1, 3, res)
+            return realizarCalculo(aux)
+        }
+    }
+    return aux
 }
 
 export {
