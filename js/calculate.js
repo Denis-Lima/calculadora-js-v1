@@ -69,6 +69,7 @@ function apagar() {
     return
 }
 function pegarResultado() {
+    if (operacao.textContent.includes('=')) return
     operacoes = operacao.textContent + ' ' + display.textContent
     let lista = operacoes.trim().replaceAll(' ',',').split(',')
     operacoes += ' ='
