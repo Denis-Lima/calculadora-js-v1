@@ -39,15 +39,16 @@ function digitar() {
     }
     if (valor_atual) atualizarDisplay(Number(valor_atual).toString(), display)
 }
+
 function clear() {
     valor_atual = ''
-    operacoes = []
     negativo = false
+    operacoes = ''
+    limpar_op = false
 
     atualizarDisplay('0', display)
     atualizarDisplay(' ', operacao)
 }
-
 function verificarUltimo (classe) {
     if (classe === 'operator') {
         return 0
